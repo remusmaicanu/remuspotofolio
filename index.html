@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video/Photo Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Creative Studio</h1>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="hero" class="hero">
+      <div class="video-container">
+        <video autoplay muted loop playsinline>
+          <source src="videos/marathon2.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="container">
+        <h2>Capture the Moment</h2>
+        <p>We turn ideas into stunning visuals.</p>
+        <a href="#portfolio" class="btn">Explore Portfolio</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <img src="images/me.jpg" alt="Remus Maicanu" class="profile-photo" />
+        <p>
+          I'm a passionate creative specializing in photography and videography.
+          With a keen eye for detail and a love for storytelling, I bring your
+          vision to life through stunning visuals and innovative techniques.
+        </p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/couple.jpg" alt="Photo 1" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/diorguy.jpg" alt="Photo 2" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/marathonguy.jpg" alt="Photo 3" />
+          </div>
+          <!-- Add more images here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 Creative Studio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
