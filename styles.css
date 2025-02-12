@@ -57,6 +57,38 @@ body {
     color: #007aff;
 }
 
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
 /* Hero Section with Video Background */
 .hero {
     position: relative;
@@ -83,6 +115,25 @@ body {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover; /* Ensures the video covers the entire container */
+}
+
+/* Fallback for mobile */
+@media (max-width: 768px) {
+    .video-container video {
+        display: none;
+    }
+    .video-container {
+        background: url('fallback-image.jpg') no-repeat center center/cover;
+    }
+    .hero {
+        height: 70vh; /* Shorter height for mobile */
+    }
+    .hero h2 {
+        font-size: 2.5rem; /* Smaller heading */
+    }
+    .hero p {
+        font-size: 1.2rem; /* Smaller paragraph */
+    }
 }
 
 .hero .container {
