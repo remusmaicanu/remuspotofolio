@@ -11,6 +11,7 @@ body {
     color: #333;
     background-color: #f4f4f4;
     scroll-behavior: smooth;
+    padding-top: 80px; /* Add padding to body to account for fixed header */
 }
 
 .container {
@@ -25,25 +26,28 @@ body {
     background-color: #000;
     color: #fff;
     padding: 20px 0;
-    position: sticky;
+    position: fixed; /* Fixed header */
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header h1 {
     font-size: 2rem;
     font-weight: 700;
-    display: inline-block;
 }
 
 .header nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-}
-
-.header nav ul li {
-    margin-left: 20px;
+    gap: 20px;
 }
 
 .header nav ul li a {
@@ -76,9 +80,10 @@ body {
         flex-direction: column;
         background-color: #000;
         position: absolute;
-        top: 60px;
-        right: 0;
+        top: 100%; /* Position below the header */
+        left: 0;
         width: 100%;
+        padding: 10px 0; /* Add spacing */
         text-align: center;
     }
     .nav-links.active {
@@ -117,13 +122,30 @@ body {
     object-fit: cover; /* Ensures the video covers the entire container */
 }
 
+.image-container {
+    display: none; /* Hide image container by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+}
+
 /* Fallback for mobile */
 @media (max-width: 768px) {
-    .video-container video {
-        display: none;
-    }
     .video-container {
-        background: url('fallback-image.jpg') no-repeat center center/cover;
+        display: none; /* Hide video on mobile */
+    }
+    .image-container {
+        display: block; /* Show image on mobile */
     }
     .hero {
         height: 70vh; /* Shorter height for mobile */
